@@ -1,0 +1,20 @@
+#pragma once
+
+//キャラの情報
+class Chara
+{
+public:
+	Chara(const String& name, const int32& lv);
+
+	Chara();
+
+	void show() const;
+
+	// シリアライズに対応させるためのメンバ関数を定義する
+	template <class Archive>
+	void SIV3D_SERIALIZE(Archive& archive);
+
+private:
+	String m_name;
+	int32 m_lv;
+};
